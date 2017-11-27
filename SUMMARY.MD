@@ -8,6 +8,7 @@
 - Backend
   - Django
     - [[MO] Get started with Django](/backend/django/getting-started.mo.md)
+    - [[MO] Create complex user models wih Django](/backend/django/create-user-model.mo.md)
   - GraphQL JS
     - [[MO] Kick start a JS GraphQL 3 layers API with Apollo-server, Dataloader and Knex](/backend/graphql-js/getting-started-with-apollo-server-dataloader-knex.mo.md)
 - Code Quality
@@ -21,11 +22,13 @@
     - [[Standard] Domain Driven Development](/project-standards/technical-agility/code-vocabulary-identical-business-vocabulary.s.md)
     - [[Standard] Easy project installation](/project-standards/technical-agility/under-15-minutes-project-installation.s.md)
     - [[Standard] Up to date dependencies](/project-standards/technical-agility/up-to-date-dependencies.s.md)
+    - [[Standard] The tests' standards of my framework are respected](/project-standards/technical-agility/react-native-test.s.md)
 - Successful Sprint
   - Coding
     - [[Standard] Good practices to resolve a ticket](/successful-sprint/coding/plan-your-ticket-to-improve-efficency.s.md)
 - React Native
   - Setup
+    - [[MO] Adding a native module](/react-native/setup/add-native-module.mo.md)
     - [[MO] Setup & Deploy New Project to Staging](/react-native/setup/setup-and-deploy-new-project-to-staging.md)
     - [[MO] Setup Code-Push on an existing project](/react-native/setup/setup-code-push.mo.md)
     - [[MO] Add Cocoapods to your project (~10min)](/react-native/setup/add-cocoapods.mo.md)
@@ -39,6 +42,7 @@
     - [[MO] Debug Native Android Code](/react-native/debugging/debug-native-android.mo.md)
     - [[MO] Debug Native iOS Code](/react-native/debugging/debug-native-ios.mo.md)
     - [[MO] Debug Javascript on an iOS Device](/react-native/debugging/debug-javascript-ios-device.mo.md)
+    - [[MO] Handle gradle dependencies versions clashes](/react-native/debugging/handle-gradle-dependencies-clash.mo.md)
   - React
     - [[Standard] Binding functions in A React component](/react-native/react/binding-functions-in-react-component.s.md)
   - Redux
