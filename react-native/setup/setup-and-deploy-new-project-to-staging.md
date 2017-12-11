@@ -43,10 +43,11 @@ wercase, no space): `staging`
 h for the environment just set: `<Press Enter>`
 - The name of the company which will be
  publishing this application: `Bam`
-- The app name for this environment: `<AppName> S`
-- The App Id for this environment: `tech.bam.<projectname>.staging`
 - Which platform will you use for deplo
-yment?: `HockeyApp`
+yment?: `AppCenter`
+- The iOS app name for this environment. Name should be different from the Android app and not contain spaces: `<AppName>-ios-S`
+- The Android app name for this environment. Name should be different from the Android app and not contain spaces: `<AppName>-android-S`
+- The App Id for this environment: `tech.bam.<projectname>.staging`
 - The type of certificate you will be u
 sing: `In House (Enterprise only)`
 - Your git repo for match: `git@github.com:<TeamRepo>/certificates.git`
@@ -55,33 +56,47 @@ sing: `In House (Enterprise only)`
 he certificates: `**redacted**`
 - Your apple id: `**redacted**`
 - Your keystore password: `<Press Enter>`
-- A valid HockeyApp token: `**redacted**`
+- A valid App Center API token: `**redacted**`
+- A valid App Center Username: `**redacted**`
+- (After some npm installation...) Should fastlane modify the Gemfile at path 'xxx' for you? (y/n): `y`
 
-### 4. Deploy Staging
+*Note:* The AppCenter username is at the bottom-left of the AppCenter interface for a person or is the name of the organization for an organization.
+
+
+### 4. Deployment setup
+```
+bundle exec fastlane ios setup --env=staging
+# Fourth Commit
+```
+
+### 5. Deploy Staging
 ```
 bundle exec fastlane ios deploy --env=staging
 bundle exec fastlane android deploy --env=staging
 ```
 
-### 5. Create the download link
+***Answers***
+- OS: `iOS/Android` depending on which you are deploying
+- Platform: `React Native`
+- Do you want to create a New App?: `yes`
+
+### 6. Create the download link
+- For each app (Android + iOS)
+  - Go to the emails you just got for the two deployments
+  - Copy the url that the *Install* button points to and remove the end bit so that it finishes
+    with `/releases/`
 - Go to [smarturl.it](https://manage.smarturl.it)
-- Go to Hockey App with `**redacted**`
-  - For each app (Android + iOS)
-    - Go to `Manage app`
-    - Go to `Distribution`
-    - Select `Download Page` > `Public`
-    - Hit `Save`
 - Create a new link
   - Default URl: `Trello url`
   - Device Destination:
-    - iPhone: The Hockey App iOS Download & Feedback `Public Page url`
-    - iPad: The Hockey App iOS Download & Feedback `Public Page url`
-    - Android: The Hockey App iOS Download & Feedback `Public Page url`
+    - iPhone: The AppCenter iOS Download & Feedback `Public Page url`
+    - iPad: The AppCenter iOS Download & Feedback `Public Page url`
+    - Android: The The AppCenter Android Download & Feedback `Public Page url`
   - Organize
     - Custom Alias: `smarturl.it/<projectName>`
    
    
- ### 6. Troubleshooting
+ ### 7. Troubleshooting
  
  If 'Cloning GitHub repo' takes more than 2 minutes: the github servers may be untrusted Trigering a `git clone git@github.com:bamlab/certificates.git` will fix it.
  
